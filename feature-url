@@ -1,0 +1,20 @@
+# 1. Se positionner sur la branche dev
+git checkout dev
+
+# 2. Récupérer les dernières modifications du dépôt distant
+git pull origin dev
+
+# 3. Se positionner sur la branche feature-url
+git checkout feature-url
+
+# 4. Faire un rebase de feature-url sur dev
+git rebase dev
+
+# 5. Revenir sur la branche dev
+git checkout dev
+
+# 6. Fusionner feature-url (sera un fast-forward grâce au rebase)
+git merge feature-url
+
+# 7. Pousser les changements sur le dépôt distant
+git push origin dev
