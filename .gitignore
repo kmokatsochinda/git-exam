@@ -1,0 +1,46 @@
+# 1. Se placer à la racine du dépôt Git
+cd /chemin/vers/le/depot
+
+# 2. Créer le fichier .gitignore
+touch .gitignore
+
+# 3. Éditer le fichier .gitignore et ajouter le contenu suivant :
+cat > .gitignore << EOF
+# Fichiers de dépendances Go
+go.mod
+go.sum
+
+# Fichiers système macOS
+.DS_Store
+*.DS_Store
+
+# Fichiers de compilation
+/bin/
+/obj/
+*.exe
+*.test
+
+# Fichiers d'environnement
+.env
+.env.local
+
+# Fichiers de log
+*.log
+
+# Fichiers temporaires
+*.tmp
+*.temp
+EOF
+
+# 4. Vérifier le contenu du fichier
+cat .gitignore
+
+# 5. Ajouter le fichier à l'index Git
+git add .gitignore
+
+# 6. Commiter le fichier
+git commit -m "feat: add .gitignore file to exclude go.mod, .DS_Store and other unnecessary files"
+
+# 7. Pousser vers le dépôt distant (sur la branche courante)
+git push origin HEAD
+
